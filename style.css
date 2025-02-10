@@ -27,6 +27,8 @@ body{
 
 #resultado{
     padding-top: 5rem;
+    color: red;
+    font-weight: bold;
 }
 
 .blocos_container{
@@ -37,10 +39,29 @@ body{
     padding-top: 15px;
 }
 
-.blocos_container div{
+.quadrado{
     display: flex;
     justify-content: center;
     align-items: center;
     border: 1px solid #000;
-    font-size: 20px
+    font-size: 50px;
+    cursor:pointer;
+}
+
+.quadrado:hover{
+    background-color:#c1bfbf ;
+}
+
+#jogar-novamente{
+    margin-top: 2rem;
+    padding: 5px 5px 5px;
+    color: aliceblue;
+    background-color: #5e5e5e;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#jogar-novamente:hover{
+    background-color: red;
 }
