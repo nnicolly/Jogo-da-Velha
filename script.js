@@ -26,7 +26,7 @@ function alternarJogador(){
 
 function ganhar(){
     let condicoesParaGanhar = [
-        [0, 1, 2], [3, 4, 5], [6, 7, 8],
+        [0, 1, 2], [3, 4, 5], [6, 7, 8],//arrays precisam começar sempre com 0
         [0, 3, 6], [1, 4, 7], [2, 5, 8],
         [0, 4, 8], [2, 4, 6],   
     ]
@@ -36,11 +36,27 @@ function ganhar(){
         let v2 = blocos[condicoesParaGanhar[i][2]].innerHTML;
 
         if(v0 != "" && v0 === v1 && v0 === v2){
-            alert(mudar)
+            GameOver = true;
+            document.querySelector("#resultado").innerHTML = mudar + " ganhou";
         }
     }
 }
 
 function velha(){
+    if(!GameOver){
+        let velha = true;
+        blocos.forEach(e =>{
+            if(e.innerHTML === "") velha = false;
+        })
 
+        if(velha){
+            GameOver = true;
+            document.querySelector("#resultado").innerHTML = "Deu velha!";
+        }
+    }
 }
+
+document.querySelector("#jogar-novamente").addEventListener(click, ()=>{
+    
+}
+)
